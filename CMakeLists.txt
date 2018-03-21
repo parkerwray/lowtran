@@ -13,9 +13,11 @@ add_test(NAME FortranSolarRadiance COMMAND testlowtran solarrad)
 
 
 find_package(PythonInterp)
-if(PYTHON_VERSION_MAJOR GREATER_EQUAL 3)
+if(PYTHON_VERSION_STRING VERSION_GREATER_EQUAL 3.6)
   if(DEFINED ENV{APPVEYOR})
-    message(INFO TODO:check plain Fortran output)
+    message(STATUS "Skipping Python on AppVeyor Windows")
+  elseif(DEFINED ENV{TRAVIS} AND APPLE)
+    message(STATUS "Skipping Python on Travis-CI OSX")
   else()
     add_test(NAME Python COMMAND pytest -v
          WORKING_DIRECTORY ${PROJECT_SOURCE_DIR})

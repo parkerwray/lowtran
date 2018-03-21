@@ -6,6 +6,7 @@ python:
 
 os:
   - linux
+  - osx
   
 group: travis_latest
 
@@ -38,8 +39,10 @@ script:
   - make test
 
 after_success: 
-  - coverage run ../tests/test_all.py
-  - coveralls
+  if [[ $TRAVIS_OS_NAME == linux ]]; then
+    coverage run ../tests/test_all.py;
+    coveralls;
+  fi
 
 after_failure:
   - ctest -V
