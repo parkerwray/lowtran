@@ -11,8 +11,8 @@ def main():
     p.add_argument('-a', '--zenang', help='observer zenith angle [deg]', type=float, nargs='+', default=[0, 60, 80])
     p.add_argument('-s', '--short', help='shortest wavelength nm ', type=float, default=200)
     p.add_argument('-l', '--long', help='longest wavelength cm^-1 ', type=float, default=30000)
-    p.add_argument('-step', help='wavelength step size cm^-1', type=float, default=20)
-    p.add_argument('--model', help='0-6, see Card1 "model" reference. 5=subarctic winter', type=int, default=5)
+    p.add_argument('-step', help='wavelength step size cm^-1', type=float, default=5)
+    p.add_argument('--model', help='0-6, see Card1 "model" reference. 5 = subarctic winter, 6 = US standard', type=int, default=6)
     P = p.parse_args()
 
     c1 = {'model': P.model,
