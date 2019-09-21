@@ -2,7 +2,7 @@
 from matplotlib.pyplot import show
 from argparse import ArgumentParser
 import lowtran
-from lowtran.plots import plottrans
+from lowtran.lowtran.plots import plottrans
 
 
 def main():

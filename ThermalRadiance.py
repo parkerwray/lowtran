@@ -16,7 +16,7 @@ from pathlib import Path
 from matplotlib.pyplot import show
 from argparse import ArgumentParser
 import lowtran
-from lowtran.plots import plotradiance
+from lowtran.lowtran.plots import plotradiance
 
 
 def main():

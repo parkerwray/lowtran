@@ -10,7 +10,7 @@ temperature [Kelvin]
 from matplotlib.pyplot import show
 from argparse import ArgumentParser
 import lowtran
-from lowtran.plots import plothoriz
+from lowtran.lowtran.plots import plothoriz
 
 
 def main():
